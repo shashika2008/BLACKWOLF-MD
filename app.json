@@ -1,6 +1,6 @@
 {
-  "name": "your Botname",
-  "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ your name ",
+  "name": "BLACKwolf-MD",
+  "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ shashika",
   "logo": "your image url",
   "keywords": ["bot"],
   "success_url": "/",
@@ -95,7 +95,7 @@
     "BOT_NAME": {
       "description": "write hear your name.",
       "required": true,
-      "value": "✦『Botname-MD』✦"
+      "value": "✦『BLACKwolf-MD』✦"
     }, 
 
     "HEART_REACT": {
