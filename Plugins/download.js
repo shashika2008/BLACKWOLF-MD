@@ -52,7 +52,7 @@ cmd({
 
     const { desc, thumb, video_sd, video_hd } = data.result;
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
+    const caption = `╭════ 〔 *BLACKwolf* 〕════❐\n`
       + `┃▸ *Description:* ${desc || "No description"}\n`
       + `╰═════════════════❐\n\n`
       + `📹 *Download Options:*\n`
@@ -62,7 +62,7 @@ cmd({
       + `3️⃣  *Audio*\n`
       + `4️⃣  *Document*\n`
       + `5️⃣  *Voice*\n\n`
-      + `📌 *Reply with the number to download your choice.*`;
+      + `📌 *reply with the number to download your choice.*`;
 
     const sentMsg = await conn.sendMessage(from, {
       image: { url: thumb },
@@ -174,7 +174,7 @@ cmd({
       react: { text: "⬆️", key: m.key }
     });
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
+    const caption = `╭════ 〔 *BLACKwolf* 〕════❐\n`
       + `┃▢ *ғɪʟᴇ ɴᴀᴍᴇ:* ${file_name}\n`
       + `┃▢ *ғɪʟᴇ ᴛʏᴘᴇ:* ${mime_type}\n`
       + `╰═════════════════❐\n\n`
@@ -224,14 +224,14 @@ cmd({
     const app = data.datalist.list[0];
     const appSize = (app.size / 1048576).toFixed(2); // Convert bytes to MB
 
-    const caption = `╭═══ 〔 *Your Botname 𝐀𝐏𝐊* 〕═══❐
+    const caption = `╭═══ 〔 *BLACKwolf 𝐀𝐏𝐊* 〕═══❐
 ┃ 🏷️ *ɴᴀᴍᴇ:* ${app.name}
 ┃ 📦 *sɪᴢᴇ:* ${appSize} MB
 ┃ 📮 *ᴘᴀᴄᴋᴀɢᴇ:* ${app.package}
 ┃ 📅 *ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ:* ${app.updated}
 ┃ 👨🏻‍💻 *ᴅᴇᴠᴇʟᴏᴘᴇʀ:* ${app.developer.name}
 ╰══════════════════❐
-> *Powered by your botname🎐*`;
+> *Powered by BLACKWOLF-MD🎐*`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
 
