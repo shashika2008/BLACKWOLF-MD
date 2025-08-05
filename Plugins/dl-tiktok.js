@@ -37,9 +37,9 @@ async (conn, mek, m, { from, args, q, reply }) => {
         const { title, like, comment, share, author, meta } = data.data;
         const videoUrl = meta.media.find(v => v.type === "video").org;
         
-        const caption = `*❒ Your Botname VⵊDEO DOWNLOADER ❒*\n\n` +
-                        `👤 *User:* ${author.nickname}\n` +
-                        `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`;
+        const caption = `*❒ BLACKwolf VⵊDEO DOWNLOADER ❒*\n\n` +
+                        `👤📲 *User:* ${author.nickname}\n` +
+                        `♥️👍 *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`;
         
         await conn.sendMessage(from, {
             video: { url: videoUrl },
