@@ -178,7 +178,7 @@ cmd({
       + `┃▢ *ғɪʟᴇ ɴᴀᴍᴇ:* ${file_name}\n`
       + `┃▢ *ғɪʟᴇ ᴛʏᴘᴇ:* ${mime_type}\n`
       + `╰═════════════════❐\n\n`
-      + `> *Powered by Your Botname🎐*`;
+      + `> *Powered by Your BLACKWOLF-MD🎐*`;
 
     await conn.sendMessage(from, {
       document: { url: dl_link },
@@ -282,7 +282,7 @@ cmd({
         document: { url: downloadUrl },
         mimetype: response.data.result.mimetype,
         fileName: response.data.result.fileName,
-        caption: "> *Powered by your Botname 🎐*"
+        caption: "> *Powered by your BLACKWOLF-MD 🎐*"
       }, { quoted: m });
 
       await conn.sendMessage(from, { react: { text: "✅", key: m.key } });
