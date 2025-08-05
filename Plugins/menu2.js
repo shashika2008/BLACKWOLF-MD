@@ -41,7 +41,7 @@ let madeMenu = `*╭─────────────────❒⁠⁠
      *${pushname}*
 
 ┏━━━━━━━━━━━━━━━━━━━━
-   *Welcome to Botname 2nd Menu*
+   *Welcome to BLACKwolf 2nd Menu*
 ┗━━━━━━━━━━━━━━━━━━━━
 
 *Created by your name👨🏻‍💻*
@@ -94,7 +94,7 @@ ${menu.search}
 *╰──────────●●►*
 
 
-> *Powered by botname*
+> *Powered by BLACKwolf*
 
 `;
 
