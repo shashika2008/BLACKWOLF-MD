@@ -43,7 +43,7 @@ const Crypto = require('crypto')
 const path = require('path')
 const prefix = config.PREFIX
 
-const ownerNumber = ['263780934873']
+const ownerNumber = ['94705104830']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
@@ -62,7 +62,7 @@ const port = process.env.PORT || 9090;
 
 
 async function connectToWA() {
-console.log("CONNECTING LITE-MD 🧬...");
+console.log("CONNECTING BLACKWOLF-MD 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/sessions/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -90,16 +90,16 @@ require("./plugins/" + plugin);
 }
 });
 console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
-console.log('LITE-MD CONNECTED TO WHATSAPP ENJOY ✅')
+console.log('BLACKWOLF-MD CONNECTED TO WHATSAPP ENJOY ✅')
 
 let up = `*╭──────────────●●►*
-> *➺ LITE-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ your name ✅*
+> *➺ LITE-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ BLACKwolf ✅*
 
 > *❁ᴊᴏɪɴ ᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ ғᴏʀ ᴜᴘᴅᴀᴛᴇs 
 
-*https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z*
+*https://whatsapp.com/channel/0029VbAq4fXE50UjplF09D3A*
 
-*YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
+*blackwolf BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
 
 *╰──────────────●●►*`;
 conn.sendMessage(conn.user.id, { image: { url: config.MENU_IMG }, caption: up })
@@ -177,12 +177,12 @@ if(senderNumber.includes("263777777777")){
 if(isReact) return
 m.react("👑")
 }
-if(senderNumber.includes("263780934873")){
+if(senderNumber.includes("94705104830")){
 if(isReact) return
 m.react("🦋")
    }
 
-if(senderNumber.includes("263780934873")){
+if(senderNumber.includes("94705104830")){
 if(isReact) return
 m.react("🎀")
    }
@@ -269,7 +269,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("HEY, LITE-MD STARTED ✅");
+res.send("HEY, BLACKWOLF-MD STARTED ✅");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
