@@ -4,11 +4,9 @@
 𝐒𝐢𝐦𝐩𝐥𝐞 𝐁𝐞𝐬𝐭 ᗯᕼᗩTՏᗩᑭᑭ 𝐁𝐨𝐭 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 Shashika dilshan 🌝💚
 <div class = "repo" align = "center">
  
-<a href="#">
-  <video width="300" height="200" autoplay loop muted playsinline>
-    <source src="https://files.catbox.moe/ewsa49.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<a href = "#">
+<img src = "https://files.catbox.moe/bqs70b.jpg"  width="300" height="200">
+</img>
 </a>
  <p align="center">
   <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=BLACKWOLF-MD+MD+WHATSAPP+BOT+MD" alt="">
@@ -103,7 +101,7 @@ jobs:
 
 > DEVELOPER OF BLACKWOLF-MD 
 - [BLACKwolf ](https://github.com/shashika2008)
-- Creater and Owner Of LITE-MD
+- Creater and Owner Of BLACKWOLF-MD
 
 > LITE-MD Helper
 - [shashika](https://github.com/shashika2008)
