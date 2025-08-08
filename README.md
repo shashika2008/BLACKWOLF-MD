@@ -1,14 +1,17 @@
 # LITE-MD
 
 <img src="https://i.imgur.com/dBaSKWF.gif" height="90" width="100%">
-𝐒𝐢𝐦𝐩𝐥𝐞 𝐁𝐞𝐬𝐭 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩 𝐁𝐨𝐭 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 MALVIN KING 🌝💚
+𝐒𝐢𝐦𝐩𝐥𝐞 𝐁𝐞𝐬𝐭 ᗯᕼᗩTՏᗩᑭᑭ 𝐁𝐨𝐭 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 Shashika dilshan 🌝💚
 <div class = "repo" align = "center">
  
-<a href = "#">
-<img src = "https://files.catbox.moe/bqs70b.jpg"  width="300" height="200">
-</img>
+<a href="#">
+  <video width="300" height="200" autoplay loop muted playsinline>
+    <source src="https://files.catbox.moe/ewsa49.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</a>
  <p align="center">
-  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=LITE-MD+MD+WHATSAPP+BOT+MD" alt="">
+  <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=BLACKWOLF-MD+MD+WHATSAPP+BOT+MD" alt="">
    
 ## 𝐃𝐄𝐏𝐋𝐎𝐘 𝐒𝐄𝐓𝐔𝐏 ↕️
 
@@ -16,7 +19,7 @@
 
 *_Start by forking this repository to your own GitHub account. Click the button below to fork:_*
 
-  <a href="https://github.com/kingmalvn/LITE-MD/fork"><img title="LITE-MD" src="https://img.shields.io/badge/FORK-LITE-MDh?color=darkblue&style=for-the-badge&logo=stackshare"></a>
+  <a href="https://github.com/shashika2008/BLACKWOLF-MD/fork"><img title="BLACKWOLF-MD" src="https://img.shields.io/badge/FORK-BLACKWOLF-MDh?color=darkblue&style=for-the-badge&logo=stackshare"></a>
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
@@ -39,12 +42,12 @@
    
   1..DEPLOY ON HEROKU ⤵️
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fkingmalvn%2FLITE-MD) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fshashika2008%2FBLACKWOLF-MD) 
    
    
   2..DEPLOY ON RENDER ⤵️
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/kingmalvin/LITE-MD.git)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/shashika2008/BLACKWOLF-MD.git)
 
 
    3..DEPLOY ON GITHUB ⤵️
@@ -98,12 +101,12 @@ jobs:
 
 ### Thank You Dear
 
-> DEVELOPER OF LITE-MD 
-- [Lord Malvin ](https://github.com/techlord01)
+> DEVELOPER OF BLACKWOLF-MD 
+- [BLACKwolf ](https://github.com/shashika2008)
 - Creater and Owner Of LITE-MD
 
 > LITE-MD Helper
-- [Malvin King](https://github.com/kingmalvn)
+- [shashika](https://github.com/shashika2008)
 - For helping in bot plugin files.
 ---
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
