@@ -46,15 +46,37 @@ const prefix = config.PREFIX
 const ownerNumber = ['94705104830']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("MALVIN-XD~", '');
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-console.log("SESSION DOWNLOADED COMPLETED ✅")
-})})}
+const { File } = require('megajs');
+const sessPath = __dirname + '/sessions/creds.json';
+
+if (!fs.existsSync(sessPath)) {
+    if(!config.SESSION_ID) {
+        console.log('Please add your session to SESSION_ID env !!');
+        process.exit(1);
+    }
+
+    // Remove any prefix (like "MALVIN-XD~") if present
+    const sessdata = config.SESSION_ID.replace(/^[^a-zA-Z0-9]+/, '');
+    
+    // Create a Mega file object
+    const megaFile = File.fromURL(`https://mega.nz/file/${sessdata}`);
+
+    megaFile.download((err, data) => {
+        if (err) {
+            console.error("Error downloading session:", err);
+            process.exit(1);
+        }
+        fs.writeFile(sessPath, data, (err) => {
+            if (err) {
+                console.error("Error writing session file:", err);
+                process.exit(1);
+            }
+            console.log("SESSION DOWNLOADED COMPLETED ✅");
+        });
+    });
+} else {
+    console.log("Session file already exists. ✅");
+}
 
 const express = require("express");
 const app = express();
