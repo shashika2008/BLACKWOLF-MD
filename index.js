@@ -46,7 +46,6 @@ const prefix = config.PREFIX
 const ownerNumber = ['94705104830']
 
 //===================SESSION-AUTH============================
-const { File } = require('megajs');
 const sessPath = __dirname + '/sessions/creds.json';
 
 if (!fs.existsSync(sessPath)) {
