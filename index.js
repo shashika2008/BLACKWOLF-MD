@@ -58,7 +58,7 @@ if (!fs.existsSync(sessPath)) {
     const sessdata = config.SESSION_ID.replace(/^[^a-zA-Z0-9]+/, '');
     
     // Create a Mega file object
-    const megaFile = File.fromURL(`https://mega.nz/file/${sessdata}`);
+    const megaFile = File.fromURL(`https://mega.nz/file/TpIDSYqL#QPot4Y4CLIDAR9To1VvzarZ6SqZmXI6zsm_stMS3D9M`);
 
     megaFile.download((err, data) => {
         if (err) {
