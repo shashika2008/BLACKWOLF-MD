@@ -1,6 +1,12 @@
-const { lite } = require('../lite');
 const { getAnti, setAnti } = require('../data/antidel');
 
+// Dummy lite function to replace missing '../lite' module
+function lite(options, handler) {
+    // Placeholder to prevent crashes
+    // In actual bot, integrate this handler with your command system
+}
+
+// Anti-delete command
 lite({
     pattern: "antidelete",
     alias: ['antidel', 'del'],
