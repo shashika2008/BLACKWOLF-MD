@@ -1,5 +1,10 @@
-const { lite } = require('../lite');
 const config = require("../settings");
+
+// Dummy lite function to replace missing '../lite' module
+function lite(options, handler) {
+    // Placeholder to prevent crashes
+    // Integrate with your bot's event system if needed
+}
 
 // Configurable lists
 const badWords = [
