@@ -1,38 +1,37 @@
 /**
+ * YouTube Downloader Bot
+ * Audio: mp3
+ * Video: mp4 (360p / 720p / 1080p)
+ */
 
-
- Copyright (C) 2025.
- Licensed under the  GPL-3.0 License;
- You may not sell this script.
- It is supplied in the hope that it may be useful.
- * @project_name : Free Bot script
- * @author : Malvin King <https://github.com/kingmalvn>
- * @description : A Multi-functional whatsapp bot script.
- * @version 3.0.0
- **/
-
-const {cmd , commands} = require('../command')
-const fg = require('api-dylux')
+const { cmd } = require('../command')
 const yts = require('yt-search')
-cmd({
-    pattern: "play2",
-    desc: "To download songs.",
-    react: "🎵",
-    category: "download",
-    filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if(!q) return reply("Please give me a url or title")  
-const search = await yts(q)
-const data = search.videos[0];
-const url = data.url
-    
-    
-let desc = `
-*⦁ MUSⵊC DOWNLOADⵊNG ⦁*
+const ytdl = require('ytdl-core')
 
-🎵 *MUSⵊC FOUND!* 
+//==================== AUDIO ====================//
+cmd({
+  pattern: "play2",
+  desc: "Download YouTube songs as MP3",
+  react: "🎵",
+  category: "download",
+  filename: __filename
+},
+async (conn, mek, m, { from, q, pushname, reply }) => {
+  try {
+    if (!q) return reply("Please give me a song name or YouTube URL")
+
+    const search = await yts(q)
+    if (!search.videos || search.videos.length === 0) {
+      return reply("No results found, try another keyword.")
+    }
+
+    const data = search.videos[0]
+    const url = data.url
+
+    let desc = `
+*⦁ MUSIC DOWNLOADER ⦁*
+
+🎵 *MUSIC FOUND!* 
 
 ➥ *Title:* ${data.title} 
 ➥ *Duration:* ${data.timestamp} 
@@ -40,51 +39,64 @@ let desc = `
 ➥ *Uploaded On:* ${data.ago} 
 ➥ *Link:* ${data.url} 
 
-🎧 *ENJOY THE MUSIC BROUGHT TO YOU!*
-
-
-> *© Powered by your botname* 
+🎧 *ENJOY THE MUSIC!*
 `
+    await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek })
 
-await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+    // Download audio
+    const info = await ytdl.getInfo(url)
+    const format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' })
 
-//download audio
+    // Send as audio
+    await conn.sendMessage(from, {
+      audio: { url: format.url },
+      mimetype: "audio/mpeg"
+    }, { quoted: mek })
 
-let down = await fg.yta(url)
-let downloadUrl = down.dl_url
+    // Send as document
+    await conn.sendMessage(from, {
+      document: { url: format.url },
+      mimetype: "audio/mpeg",
+      fileName: `${data.title}.mp3`,
+      caption: "*© Powered by Your Botname*"
+    }, { quoted: mek })
 
-//send audio message
-await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
-await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"*© Powered by Your Botname*"},{quoted:mek})
-
-}catch(e){
-console.log(e)
-  reply(`_Hi ${pushname} retry later_`)
-}
+  } catch (e) {
+    console.log(e)
+    reply(`_Hi ${pushname}, retry later_`)
+  }
 })
 
-//====================video_dl=======================
 
+//==================== VIDEO ====================//
 cmd({
-    pattern: "darama",
-    alias: ["video2"],
-    desc: "To download videos.",
-    react: "🎥",
-    category: "download",
-    filename: __filename
+  pattern: "darama",
+  alias: ["video2"],
+  desc: "Download YouTube videos (360p/720p/1080p)",
+  react: "🎥",
+  category: "download",
+  filename: __filename
 },
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if(!q) return reply("Please give me a url or title")  
-const search = await yts(q)
-const data = search.videos[0];
-const url = data.url
-    
-    
-let desc = `
-* ⦁ VⵊDEO DOWNLOADⵊNG ⦁ *
+async (conn, mek, m, { from, q, args, pushname, reply }) => {
+  try {
+    if (!q) return reply("Please give me a video name or YouTube URL")
 
-🎥 *VⵊDEO FOUND!* 
+    const search = await yts(q)
+    if (!search.videos || search.videos.length === 0) {
+      return reply("No results found, try another keyword.")
+    }
+
+    const data = search.videos[0]
+    const url = data.url
+
+    // Quality selection
+    let quality = "360" // default
+    if (args[1] && ["360","720","1080"].includes(args[1])) quality = args[1]
+
+    let desc = `
+*⦁ VIDEO DOWNLOADER ⦁*
+
+🎥 *VIDEO FOUND!* 
 
 ➥ *Title:* ${data.title} 
 ➥ *Duration:* ${data.timestamp} 
@@ -92,26 +104,35 @@ let desc = `
 ➥ *Uploaded On:* ${data.ago} 
 ➥ *Link:* ${data.url} 
 
-🎬 *ENJOY THE VIDEO BROUGHT TO YOU!*
-
-
-> *© powered by your botname*
+🎬 *Downloading in ${quality}p ...*
 `
+    await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek })
 
-await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
+    // Video download
+    const info = await ytdl.getInfo(url)
+    let format = info.formats.find(f => f.qualityLabel === quality + "p" && f.container === "mp4")
 
-//download video
+    if (!format) {
+      format = ytdl.chooseFormat(info.formats, { quality: '18' }) // fallback 360p
+      reply(`⚠️ ${quality}p not available, sending default quality.`)
+    }
 
-let down = await fg.ytv(url)
-let downloadUrl = down.dl_url
+    // Send as video
+    await conn.sendMessage(from, {
+      video: { url: format.url },
+      mimetype: "video/mp4"
+    }, { quoted: mek })
 
-//send video message
-await conn.sendMessage(from,{video: {url:downloadUrl},mimetype:"video/mp4"},{quoted:mek})
-await conn.sendMessage(from,{document: {url:downloadUrl},mimetype:"video/mp4",fileName:data.title + ".mp4",caption:"*© Powered by your Botname*"},{quoted:mek})
+    // Send as document
+    await conn.sendMessage(from, {
+      document: { url: format.url },
+      mimetype: "video/mp4",
+      fileName: `${data.title}.mp4`,
+      caption: "*© Powered by blacwolf*"
+    }, { quoted: mek })
 
-}catch(e){
-console.log(e)
-  reply(`_Hi ${pushname} retry later_`)
-}
+  } catch (e) {
+    console.log(e)
+    reply(`_Hi ${pushname}, retry later_`)
+  }
 })
-//
