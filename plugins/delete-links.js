@@ -1,4 +1,3 @@
-const { lite } = require('../lite');
 const config = require('../settings');
 const fs = require('fs');
 const path = require('path');
@@ -9,6 +8,12 @@ let warnings = fs.existsSync(warnPath) ? JSON.parse(fs.readFileSync(warnPath)) :
 const saveWarnings = () => {
   fs.writeFileSync(warnPath, JSON.stringify(warnings, null, 2));
 };
+
+// Dummy lite function to replace missing '../lite' module
+function lite(options, handler) {
+  // Placeholder to prevent crashes
+  // Integrate with your bot's event system if needed
+}
 
 const linkPatterns = [
   /https?:\/\/(?:chat\.whatsapp\.com|wa\.me)\/\S+/gi,
