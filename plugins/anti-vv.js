@@ -1,4 +1,8 @@
-const { lite } = require("../lite");
+// Dummy lite function to replace missing '../lite' module
+function lite(options, handler) {
+    // Placeholder to prevent crashes
+    // Integrate with your bot command system if needed
+}
 
 lite({
   pattern: "vv",
